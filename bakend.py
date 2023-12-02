@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
 from dbAccess import DB_Access
 
-
-Medical_app = Flask(__name__ )
+Medical_app = Flask(__name__)
 db = DB_Access()
 
 
@@ -10,7 +9,8 @@ db = DB_Access()
 def index():
     return render_template('index.html')
 
-@Medical_app.route('/register') 
+
+@Medical_app.route('/register')
 def register():
     return render_template('register.html')
 
@@ -59,5 +59,4 @@ def loginchk():
 
 
 if __name__ == '__main__':
-
     Medical_app.run()
