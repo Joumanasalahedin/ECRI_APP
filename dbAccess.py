@@ -13,7 +13,7 @@ class DB_Access:
         )
         self.mycursor = self.mydb.cursor()
 
-    def insert_new_registration_data(self,  names, passwords, phones, emails, addresss) -> bool:
+    def insert_new_registration_data(self, names, passwords, phones, emails, addresss) -> bool:
         self.mycursor.execute(
             "INSERT INTO registration (name, password, phone, email, address) VALUES (%s, %s, %s, %s, %s)",
             (names, passwords, phones, emails, addresss))
@@ -22,7 +22,6 @@ class DB_Access:
             return True
         else:
             return False
-
 
     def check_login_data(self, emails, passwords) -> bool:
         self.mycursor.execute(
@@ -33,4 +32,3 @@ class DB_Access:
             return True
         else:
             return False
-
